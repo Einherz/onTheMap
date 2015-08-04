@@ -514,7 +514,7 @@
                                     <action selector="sendPosition:" destination="jcx-UY-rww" eventType="touchUpInside" id="UYP-qI-MGP"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-rt-A00">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-rt-A00">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a Link to Share Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6st-k9-X97">
