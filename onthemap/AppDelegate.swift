@@ -13,11 +13,29 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var studentList = [StudentInformation]()
+    
+    //Facebook
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        FBSDKLoginButton.self
+        let chkLogin:sharePreference = sharePreference()
+
+        if(FBSDKAccessToken.currentAccessToken() != nil || chkLogin.getLogin() == "1")
+        {
+            //go to main page
+            println("Logged in")
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+            self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("loggedView") as? UITabBarController;
+
+        }
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -36,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp();
+        
     }
 
     func applicationWillTerminate(application: UIApplication) {

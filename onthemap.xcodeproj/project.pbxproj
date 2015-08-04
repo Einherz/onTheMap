@@ -7,13 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF04CEE21B66822B00B65881 /* crymeme1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF04CEDE1B66822B00B65881 /* crymeme1.png */; };
+		DF04CEE31B66822B00B65881 /* crymeme2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF04CEDF1B66822B00B65881 /* crymeme2.png */; };
+		DF04CEE41B66822B00B65881 /* crymeme3.png in Resources */ = {isa = PBXBuildFile; fileRef = DF04CEE01B66822B00B65881 /* crymeme3.png */; };
+		DF04CEE51B66822B00B65881 /* crymeme4.png in Resources */ = {isa = PBXBuildFile; fileRef = DF04CEE11B66822B00B65881 /* crymeme4.png */; };
+		DF04CEE71B6684DC00B65881 /* Bubble_talk.png in Resources */ = {isa = PBXBuildFile; fileRef = DF04CEE61B6684DC00B65881 /* Bubble_talk.png */; };
+		DF3A7BF41B628EB600E85FA7 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DF3A7BF31B628EB600E85FA7 /* map_pin.png */; };
+		DF3A7BF61B628F1F00E85FA7 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DF3A7BF51B628F1F00E85FA7 /* refresh.png */; };
+		DF3A7BF81B629A3A00E85FA7 /* gridMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A7BF71B629A3A00E85FA7 /* gridMapView.swift */; };
+		DF3A7BFA1B63F07C00E85FA7 /* geoLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A7BF91B63F07C00E85FA7 /* geoLocationView.swift */; };
+		DF517EC21B608B3400013445 /* enterLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF517EC11B608B3400013445 /* enterLocationView.swift */; };
 		DFC8FC2C1B5CC7FA00833E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FC2B1B5CC7FA00833E0C /* AppDelegate.swift */; };
 		DFC8FC2F1B5CC7FA00833E0C /* onthemap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FC2D1B5CC7FA00833E0C /* onthemap.xcdatamodeld */; };
-		DFC8FC311B5CC7FA00833E0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FC301B5CC7FA00833E0C /* ViewController.swift */; };
+		DFC8FC311B5CC7FA00833E0C /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FC301B5CC7FA00833E0C /* loginView.swift */; };
 		DFC8FC341B5CC7FA00833E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC8FC321B5CC7FA00833E0C /* Main.storyboard */; };
 		DFC8FC361B5CC7FA00833E0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC8FC351B5CC7FA00833E0C /* Images.xcassets */; };
 		DFC8FC391B5CC7FA00833E0C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFC8FC371B5CC7FA00833E0C /* LaunchScreen.xib */; };
 		DFC8FC451B5CC7FA00833E0C /* onthemapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FC441B5CC7FA00833E0C /* onthemapTests.swift */; };
+		DFC8FC531B5CCBF800833E0C /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = DFC8FC521B5CCBF800833E0C /* me.png */; };
+		DFC8FDF01B5CF21B00833E0C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC8FDEE1B5CF21B00833E0C /* FBSDKCoreKit.framework */; };
+		DFC8FDF11B5CF21B00833E0C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC8FDEF1B5CF21B00833E0C /* FBSDKLoginKit.framework */; };
+		DFC8FDF41B5CF36600833E0C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC8FDF31B5CF36600833E0C /* Bolts.framework */; };
+		DFC8FDF61B5DF4C700833E0C /* udacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FDF51B5DF4C700833E0C /* udacityAPI.swift */; };
+		DFC8FDF81B5DFF5C00833E0C /* parseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FDF71B5DFF5C00833E0C /* parseAPI.swift */; };
+		DFC8FDFA1B5DFFCD00833E0C /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FDF91B5DFFCD00833E0C /* StudentInformation.swift */; };
+		DFC8FDFC1B5E10C700833E0C /* loginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FDFB1B5E10C700833E0C /* loginInfo.swift */; };
+		DFC8FDFE1B5E314700833E0C /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FDFD1B5E314700833E0C /* mainView.swift */; };
+		DFC8FE001B5E3C8500833E0C /* sharePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FDFF1B5E3C8500833E0C /* sharePreference.swift */; };
+		DFC8FE061B5E48E600833E0C /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FE051B5E48E600833E0C /* mapView.swift */; };
+		DFC8FE081B5E490500833E0C /* listMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8FE071B5E490500833E0C /* listMapView.swift */; };
+		DFFEFBE71B6FB4930050BC5D /* human.png in Resources */ = {isa = PBXBuildFile; fileRef = DFFEFBE61B6FB4930050BC5D /* human.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +50,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF04CEDE1B66822B00B65881 /* crymeme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crymeme1.png; sourceTree = "<group>"; };
+		DF04CEDF1B66822B00B65881 /* crymeme2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crymeme2.png; sourceTree = "<group>"; };
+		DF04CEE01B66822B00B65881 /* crymeme3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crymeme3.png; sourceTree = "<group>"; };
+		DF04CEE11B66822B00B65881 /* crymeme4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crymeme4.png; sourceTree = "<group>"; };
+		DF04CEE61B6684DC00B65881 /* Bubble_talk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bubble_talk.png; sourceTree = "<group>"; };
+		DF3A7BF31B628EB600E85FA7 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
+		DF3A7BF51B628F1F00E85FA7 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		DF3A7BF71B629A3A00E85FA7 /* gridMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gridMapView.swift; sourceTree = "<group>"; };
+		DF3A7BF91B63F07C00E85FA7 /* geoLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = geoLocationView.swift; sourceTree = "<group>"; };
+		DF517EC11B608B3400013445 /* enterLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterLocationView.swift; sourceTree = "<group>"; };
 		DFC8FC261B5CC7FA00833E0C /* onthemap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onthemap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC8FC2A1B5CC7FA00833E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC8FC2B1B5CC7FA00833E0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC8FC2E1B5CC7FA00833E0C /* onthemap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = onthemap.xcdatamodel; sourceTree = "<group>"; };
-		DFC8FC301B5CC7FA00833E0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFC8FC301B5CC7FA00833E0C /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		DFC8FC331B5CC7FA00833E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFC8FC351B5CC7FA00833E0C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFC8FC381B5CC7FA00833E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DFC8FC3E1B5CC7FA00833E0C /* onthemapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = onthemapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC8FC431B5CC7FA00833E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC8FC441B5CC7FA00833E0C /* onthemapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onthemapTests.swift; sourceTree = "<group>"; };
+		DFC8FC521B5CCBF800833E0C /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
+		DFC8FC5B1B5CE9C400833E0C /* Bridging-FB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-FB.h"; sourceTree = "<group>"; };
+		DFC8FDEE1B5CF21B00833E0C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = /Users/amornapichattanakul/Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<absolute>"; };
+		DFC8FDEF1B5CF21B00833E0C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = /Users/amornapichattanakul/Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<absolute>"; };
+		DFC8FDF31B5CF36600833E0C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../../Users/amornapichattanakul/Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		DFC8FDF51B5DF4C700833E0C /* udacityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = udacityAPI.swift; sourceTree = "<group>"; };
+		DFC8FDF71B5DFF5C00833E0C /* parseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parseAPI.swift; sourceTree = "<group>"; };
+		DFC8FDF91B5DFFCD00833E0C /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		DFC8FDFB1B5E10C700833E0C /* loginInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginInfo.swift; sourceTree = "<group>"; };
+		DFC8FDFD1B5E314700833E0C /* mainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
+		DFC8FDFF1B5E3C8500833E0C /* sharePreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharePreference.swift; sourceTree = "<group>"; };
+		DFC8FE051B5E48E600833E0C /* mapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
+		DFC8FE071B5E490500833E0C /* listMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listMapView.swift; sourceTree = "<group>"; };
+		DFFEFBE61B6FB4930050BC5D /* human.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC8FDF41B5CF36600833E0C /* Bolts.framework in Frameworks */,
+				DFC8FDF11B5CF21B00833E0C /* FBSDKLoginKit.framework in Frameworks */,
+				DFC8FDF01B5CF21B00833E0C /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +129,13 @@
 		DFC8FC281B5CC7FA00833E0C /* onthemap */ = {
 			isa = PBXGroup;
 			children = (
+				DFC8FDF21B5CF22200833E0C /* Frameworks */,
+				DFC8FC511B5CCBC800833E0C /* assets */,
+				DFC8FC501B5CC83D00833E0C /* Controller */,
+				DFC8FC4F1B5CC83700833E0C /* View */,
+				DFC8FC4E1B5CC82D00833E0C /* Model */,
 				DFC8FC2B1B5CC7FA00833E0C /* AppDelegate.swift */,
-				DFC8FC301B5CC7FA00833E0C /* ViewController.swift */,
+				DFC8FC5B1B5CE9C400833E0C /* Bridging-FB.h */,
 				DFC8FC321B5CC7FA00833E0C /* Main.storyboard */,
 				DFC8FC351B5CC7FA00833E0C /* Images.xcassets */,
 				DFC8FC371B5CC7FA00833E0C /* LaunchScreen.xib */,
@@ -113,6 +168,65 @@
 				DFC8FC431B5CC7FA00833E0C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFC8FC4E1B5CC82D00833E0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFC8FDF91B5DFFCD00833E0C /* StudentInformation.swift */,
+				DFC8FDFB1B5E10C700833E0C /* loginInfo.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DFC8FC4F1B5CC83700833E0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DFC8FC301B5CC7FA00833E0C /* loginView.swift */,
+				DFC8FDFD1B5E314700833E0C /* mainView.swift */,
+				DFC8FE051B5E48E600833E0C /* mapView.swift */,
+				DFC8FE071B5E490500833E0C /* listMapView.swift */,
+				DF3A7BF71B629A3A00E85FA7 /* gridMapView.swift */,
+				DF517EC11B608B3400013445 /* enterLocationView.swift */,
+				DF3A7BF91B63F07C00E85FA7 /* geoLocationView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DFC8FC501B5CC83D00833E0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFC8FDF51B5DF4C700833E0C /* udacityAPI.swift */,
+				DFC8FDFF1B5E3C8500833E0C /* sharePreference.swift */,
+				DFC8FDF71B5DFF5C00833E0C /* parseAPI.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DFC8FC511B5CCBC800833E0C /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				DFFEFBE61B6FB4930050BC5D /* human.png */,
+				DF04CEE61B6684DC00B65881 /* Bubble_talk.png */,
+				DF3A7BF51B628F1F00E85FA7 /* refresh.png */,
+				DF04CEDE1B66822B00B65881 /* crymeme1.png */,
+				DF04CEDF1B66822B00B65881 /* crymeme2.png */,
+				DF04CEE01B66822B00B65881 /* crymeme3.png */,
+				DF04CEE11B66822B00B65881 /* crymeme4.png */,
+				DF3A7BF31B628EB600E85FA7 /* map_pin.png */,
+				DFC8FC521B5CCBF800833E0C /* me.png */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		DFC8FDF21B5CF22200833E0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFC8FDF31B5CF36600833E0C /* Bolts.framework */,
+				DFC8FDEE1B5CF21B00833E0C /* FBSDKCoreKit.framework */,
+				DFC8FDEF1B5CF21B00833E0C /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +310,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC8FC341B5CC7FA00833E0C /* Main.storyboard in Resources */,
+				DFFEFBE71B6FB4930050BC5D /* human.png in Resources */,
+				DF3A7BF41B628EB600E85FA7 /* map_pin.png in Resources */,
+				DF3A7BF61B628F1F00E85FA7 /* refresh.png in Resources */,
+				DF04CEE41B66822B00B65881 /* crymeme3.png in Resources */,
+				DF04CEE31B66822B00B65881 /* crymeme2.png in Resources */,
 				DFC8FC391B5CC7FA00833E0C /* LaunchScreen.xib in Resources */,
+				DF04CEE21B66822B00B65881 /* crymeme1.png in Resources */,
 				DFC8FC361B5CC7FA00833E0C /* Images.xcassets in Resources */,
+				DFC8FC531B5CCBF800833E0C /* me.png in Resources */,
+				DF04CEE71B6684DC00B65881 /* Bubble_talk.png in Resources */,
+				DF04CEE51B66822B00B65881 /* crymeme4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +338,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFC8FC311B5CC7FA00833E0C /* ViewController.swift in Sources */,
+				DFC8FDFC1B5E10C700833E0C /* loginInfo.swift in Sources */,
+				DFC8FDFE1B5E314700833E0C /* mainView.swift in Sources */,
+				DFC8FDF81B5DFF5C00833E0C /* parseAPI.swift in Sources */,
+				DFC8FE081B5E490500833E0C /* listMapView.swift in Sources */,
+				DFC8FE061B5E48E600833E0C /* mapView.swift in Sources */,
+				DFC8FDF61B5DF4C700833E0C /* udacityAPI.swift in Sources */,
+				DFC8FC311B5CC7FA00833E0C /* loginView.swift in Sources */,
+				DFC8FE001B5E3C8500833E0C /* sharePreference.swift in Sources */,
+				DF517EC21B608B3400013445 /* enterLocationView.swift in Sources */,
 				DFC8FC2C1B5CC7FA00833E0C /* AppDelegate.swift in Sources */,
+				DF3A7BF81B629A3A00E85FA7 /* gridMapView.swift in Sources */,
+				DF3A7BFA1B63F07C00E85FA7 /* geoLocationView.swift in Sources */,
+				DFC8FDFA1B5DFFCD00833E0C /* StudentInformation.swift in Sources */,
 				DFC8FC2F1B5CC7FA00833E0C /* onthemap.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,9 +480,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/onthemap",
+					/Users/amornapichattanakul/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = onthemap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "onthemap/Bridging-FB.h";
 			};
 			name = Debug;
 		};
@@ -356,9 +496,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/onthemap",
+					/Users/amornapichattanakul/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = onthemap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "onthemap/Bridging-FB.h";
 			};
 			name = Release;
 		};
@@ -415,6 +561,7 @@
 				DFC8FC4A1B5CC7FA00833E0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFC8FC4B1B5CC7FA00833E0C /* Build configuration list for PBXNativeTarget "onthemapTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +570,7 @@
 				DFC8FC4D1B5CC7FA00833E0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
