@@ -8,8 +8,13 @@
 
 import Foundation
 
-class enterLocationView:UIViewController{
+class enterLocationView:UIViewController,UIGestureRecognizerDelegate{
     
+    override func viewDidLoad() {
+        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard:")
+        tapGesture.delegate = self
+        self.view.addGestureRecognizer(tapGesture);
+    }
     
     @IBOutlet weak var locationTxt: UITextField!
     
@@ -35,5 +40,18 @@ class enterLocationView:UIViewController{
     }
     @IBAction func cancelAction(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //Mark keyboard hiding
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        // force keyboard to hide
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func hideKeyBoard()
+    {
+        // force keyboard to hide
+        self.view.endEditing(true);
     }
 }

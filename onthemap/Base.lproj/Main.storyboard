@@ -162,16 +162,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="On The Map" id="Wae-UN-2Ug">
-                                        <barButtonItem key="leftBarButtonItem" image="map_pin.png" id="t1y-Mq-7Pr">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="wL8-Fk-5dW">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="logOut:" destination="MTO-er-LHH" id="j4j-1O-dzU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="map_pin.png" id="t1y-Mq-7Pr">
                                             <color key="tintColor" red="1" green="0.37072875129999999" blue="0.33223539680000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="sendPosition:" destination="MTO-er-LHH" id="kwf-Sx-KJ9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="refresh.png" id="gFo-Wh-ag0">
-                                            <color key="tintColor" red="1" green="0.37072875129999999" blue="0.33223539680000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="reloadMap:" destination="x3L-rO-u9R" id="npn-J5-ekS"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -307,16 +307,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="On The Map" id="gqW-tz-GjZ">
-                                        <barButtonItem key="leftBarButtonItem" image="map_pin.png" id="DJE-5r-RVf">
-                                            <color key="tintColor" red="1" green="0.37072875133626959" blue="0.33223539677847502" alpha="1" colorSpace="calibratedRGB"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="pYN-De-f0X">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="sendPosition:" destination="x3L-rO-u9R" id="3Tx-8N-43R"/>
+                                                <action selector="logOut:" destination="x3L-rO-u9R" id="HHv-Wx-bgY"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="refresh.png" id="Dp5-iA-7SW">
+                                        <barButtonItem key="rightBarButtonItem" image="map_pin.png" id="gqX-Lq-ZMf">
                                             <color key="tintColor" red="1" green="0.37072875129999999" blue="0.33223539680000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="reloadMap:" destination="x3L-rO-u9R" id="gmd-zb-klV"/>
+                                                <action selector="sendPosition:" destination="x3L-rO-u9R" id="z5i-no-7LQ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -325,21 +325,8 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Vb-iO-t2h">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40D-8o-cAl">
-                                <rect key="frame" x="466" y="28" width="58" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="58" id="9Ge-TZ-v3j"/>
-                                </constraints>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOut:" destination="x3L-rO-u9R" eventType="touchUpInside" id="atk-oB-Nmc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETc-PR-HBX">
-                                <rect key="frame" x="524" y="80" width="40" height="40"/>
+                                <rect key="frame" x="504" y="80" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Jfs-jK-VLX"/>
                                     <constraint firstAttribute="height" constant="40" id="Qqe-p7-tT5"/>
@@ -350,27 +337,34 @@
                                     <action selector="findMe:" destination="x3L-rO-u9R" eventType="touchUpInside" id="gCa-2Z-fOm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-9b-IiL">
+                                <rect key="frame" x="564" y="90" width="20" height="22"/>
+                                <state key="normal" image="refresh.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadMap:" destination="x3L-rO-u9R" eventType="touchUpInside" id="mzb-ry-XXQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QpN-al-kKP" firstAttribute="leading" secondItem="lZS-rI-EpC" secondAttribute="leading" id="5a6-dO-8wO"/>
-                            <constraint firstItem="PpZ-DP-zjk" firstAttribute="top" secondItem="40D-8o-cAl" secondAttribute="bottom" constant="80" id="7qa-CW-FIp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="40D-8o-cAl" secondAttribute="trailing" constant="60" id="Dof-mO-Qeh"/>
                             <constraint firstItem="PpZ-DP-zjk" firstAttribute="top" secondItem="1Vb-iO-t2h" secondAttribute="bottom" id="F3X-V3-Wiu"/>
-                            <constraint firstItem="40D-8o-cAl" firstAttribute="leading" secondItem="lZS-rI-EpC" secondAttribute="leadingMargin" id="GUf-Kh-zRJ"/>
                             <constraint firstItem="1Vb-iO-t2h" firstAttribute="leading" secondItem="lZS-rI-EpC" secondAttribute="leading" id="JGS-lH-ixo"/>
+                            <constraint firstItem="C5k-9b-IiL" firstAttribute="top" secondItem="5Uq-nB-aAD" secondAttribute="bottom" constant="70" id="JYX-mN-F4R"/>
                             <constraint firstItem="ETc-PR-HBX" firstAttribute="top" secondItem="5Uq-nB-aAD" secondAttribute="bottom" constant="60" id="OBx-NQ-VbL"/>
+                            <constraint firstItem="C5k-9b-IiL" firstAttribute="leading" secondItem="ETc-PR-HBX" secondAttribute="trailing" constant="20" id="P51-ci-h0O"/>
                             <constraint firstItem="QpN-al-kKP" firstAttribute="top" secondItem="5Uq-nB-aAD" secondAttribute="bottom" id="Sr2-cB-au1"/>
                             <constraint firstAttribute="trailing" secondItem="QpN-al-kKP" secondAttribute="trailing" id="VqX-RA-h98"/>
-                            <constraint firstItem="40D-8o-cAl" firstAttribute="top" secondItem="5Uq-nB-aAD" secondAttribute="bottom" constant="8" id="ex5-gY-kxt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ETc-PR-HBX" secondAttribute="trailing" constant="20" id="laD-ZH-g0o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C5k-9b-IiL" secondAttribute="trailing" id="n15-wh-ZJd"/>
                             <constraint firstAttribute="trailing" secondItem="1Vb-iO-t2h" secondAttribute="trailing" id="nSw-Dh-8sU"/>
                             <constraint firstItem="1Vb-iO-t2h" firstAttribute="top" secondItem="QpN-al-kKP" secondAttribute="bottom" id="tR2-ek-R22"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="GUf-Kh-zRJ"/>
-                                <exclude reference="7qa-CW-FIp"/>
+                                <exclude reference="laD-ZH-g0o"/>
                             </mask>
                         </variation>
                     </view>
@@ -506,11 +500,25 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Ka-8a-cqg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-rt-A00">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwm-uL-9Qh">
+                                <rect key="frame" x="260" y="526" width="80" height="34"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ljC-Ht-EpN"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendPosition:" destination="jcx-UY-rww" eventType="touchUpInside" id="UYP-qI-MGP"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-rt-A00">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a Link to Share Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6st-k9-X97">
-                                        <rect key="frame" x="182.5" y="60" width="234.5" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a Link to Share Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6st-k9-X97">
+                                        <rect key="frame" x="182" y="60" width="234.5" height="24"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -529,30 +537,31 @@
                                             <action selector="cancelAction:" destination="jcx-UY-rww" eventType="touchUpInside" id="a7T-4H-KpM"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfh-2u-eUx">
+                                        <rect key="frame" x="289" y="118" width="22" height="22"/>
+                                        <color key="tintColor" red="1" green="0.37072875129999999" blue="0.33223539680000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.94901960780000005" green="0.06186342593" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="checkSite:" destination="jcx-UY-rww" eventType="touchUpInside" id="gMx-zm-0Rk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="6st-k9-X97" secondAttribute="centerX" id="8ny-bK-5Pg"/>
+                                    <constraint firstItem="dfh-2u-eUx" firstAttribute="top" secondItem="6st-k9-X97" secondAttribute="bottom" constant="34" id="HYk-q8-phH"/>
                                     <constraint firstItem="6st-k9-X97" firstAttribute="top" secondItem="Moe-rt-A00" secondAttribute="top" constant="60" id="Tcd-SD-RUh"/>
                                     <constraint firstAttribute="height" constant="200" id="lJT-lA-UJi"/>
                                     <constraint firstAttribute="trailing" secondItem="0Da-Pc-jGn" secondAttribute="trailing" constant="20" id="n6Z-mR-rKy"/>
+                                    <constraint firstAttribute="centerX" secondItem="dfh-2u-eUx" secondAttribute="centerX" id="neA-Yl-YSH"/>
                                     <constraint firstItem="0Da-Pc-jGn" firstAttribute="top" secondItem="Moe-rt-A00" secondAttribute="top" constant="20" id="zrc-BX-Y1L"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwm-uL-9Qh">
-                                <rect key="frame" x="260" y="526" width="80" height="34"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="ljC-Ht-EpN"/>
-                                </constraints>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendPosition:" destination="jcx-UY-rww" eventType="touchUpInside" id="UYP-qI-MGP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -576,6 +585,7 @@
                     <connections>
                         <outlet property="mapView" destination="8Ka-8a-cqg" id="qwW-p1-G7T"/>
                         <outlet property="shareLocation" destination="6st-k9-X97" id="gBf-wH-Mfm"/>
+                        <outlet property="submitBtn" destination="bwm-uL-9Qh" id="9Kk-pr-GFv"/>
                         <outlet property="topUrlView" destination="Moe-rt-A00" id="tTA-S1-J63"/>
                     </connections>
                 </viewController>

@@ -20,15 +20,18 @@ class parseAPI {
     let parseURL:String = "https://api.parse.com/1/classes/StudentLocation"
     
     var delegate:loadPositionDelegate?
-    var students: [StudentInformation] = []
+    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+
     
-    
-    func getStudentLocations()
+    func getStudentLocations(count:Int)
     {
-        let request = NSMutableURLRequest(URL: NSURL(string: parseURL)!)
+        var students: [StudentInformation] = []
+
+        let request = NSMutableURLRequest(URL: NSURL(string: parseURL+"?limit=10&skip=\(count)")!)
         request.addValue(parseID, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(restAPI, forHTTPHeaderField: "X-Parse-REST-API-Key")
         let session = NSURLSession.sharedSession()
+        
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { // Handle error...
                 let alert = UIAlertView()
@@ -38,16 +41,17 @@ class parseAPI {
                 alert.show()
                 return
             }
+            
             var parsingError: NSError? = nil
             let parsedResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError) as! NSDictionary
            
             for user in parsedResult.valueForKey("results") as! NSArray{
                 var student:StudentInformation = StudentInformation(firstName: user["firstName"] as! NSString, lastName: user["lastName"] as! NSString, latitude: user["latitude"] as! Double, longitude: user["longitude"] as! Double, mapString:user["mapString"] as! NSString,mediaURL: user["mediaURL"] as! NSString, createdAt:user["createdAt"] as! NSString, updatedAt:(user["updatedAt"] as? NSString)!)
-                self.students.append(student)
+                students.append(student)
             }
 
             dispatch_async(dispatch_get_main_queue(), {
-                self.delegate?.didFinishedLoadMap(self.students)
+                self.delegate?.didFinishedLoadMap(students)
             })
         }
         task.resume()
@@ -62,6 +66,7 @@ class parseAPI {
         request.addValue(parseID, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(restAPI, forHTTPHeaderField: "X-Parse-REST-API-Key")
         let session = NSURLSession.sharedSession()
+        
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { /* Handle error */
                 let alert = UIAlertView()
@@ -99,6 +104,7 @@ class parseAPI {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let session = NSURLSession.sharedSession()
+        
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { // Handle error…
                 let alert = UIAlertView()
@@ -108,10 +114,9 @@ class parseAPI {
                 alert.show()
                 return
             }
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            
             var parsingError: NSError? = nil
             let parsedResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError) as! NSDictionary
-            println("response \(parsedResult)")
             
             if(objectId.isEmpty){
                 dispatch_async(dispatch_get_main_queue(), {

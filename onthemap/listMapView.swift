@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
-class listMapView:UIViewController,UITableViewDelegate,UITableViewDataSource {
+class listMapView:UIViewController,UITableViewDelegate,UITableViewDataSource,loadPositionDelegate {
     
     let cellReuseIdentifier = "cellTable"
+    let parseMap:parseAPI = parseAPI()
+
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+    var flagEnd = false
 
     @IBOutlet weak var mapList: UITableView!
     
@@ -20,6 +23,11 @@ class listMapView:UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         self.mapList.delegate = self
         self.mapList.dataSource = self
+        self.parseMap.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.mapList.reloadData()
     }
     
     @IBAction func sendPosition(sender: UIBarButtonItem) {
@@ -35,6 +43,18 @@ class listMapView:UIViewController,UITableViewDelegate,UITableViewDataSource {
             alert.addButtonWithTitle("Cancel")
             alert.show()
         }
+    }
+    
+    @IBAction func logOut(sender: AnyObject) {
+        let chkLogin:sharePreference = sharePreference()
+        chkLogin.clearLogin()
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var viewController = storyboard.instantiateViewControllerWithIdentifier("login") as! loginView
+        self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
@@ -67,6 +87,35 @@ class listMapView:UIViewController,UITableViewDelegate,UITableViewDataSource {
         
             let app = UIApplication.sharedApplication()
             app.openURL(NSURL(string: obj.getMedia() as String)!)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentOffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentOffset
+        
+        if(distanceFromBottom <= height && !self.flagEnd)
+        {
+            self.flagEnd = true
+            // Parse limit at 100 anyways so no point to load more data and waste network
+            if(self.appDelegate.countUp < 90){
+                println("end of table, load more data \(self.appDelegate.countUp)")
+                self.appDelegate.countUp += 10
+                self.parseMap.getStudentLocations(self.appDelegate.countUp)
+            }
+        }
+    }
+    //Mark
+    func didFinishedLoadMap(students:[StudentInformation])
+    {
+        self.appDelegate.studentList += students
+        self.mapList.reloadData()
+        
+        self.flagEnd = false
+    }
+    
+    func didFinishedPostMap(objID: String, status: Int) {
+        //do nothing
     }
     
 }

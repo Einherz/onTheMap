@@ -16,7 +16,7 @@ class mapView:UIViewController, MKMapViewDelegate, loadPositionDelegate, UIAlert
     var annotations = [MKPointAnnotation]()
     var myAnnotation = MKPointAnnotation()
 
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
     
    
     @IBOutlet weak var mapView: MKMapView!
@@ -26,8 +26,14 @@ class mapView:UIViewController, MKMapViewDelegate, loadPositionDelegate, UIAlert
         
         self.mapView.delegate = self
         self.parseMap.delegate = self
-        self.parseMap.getStudentLocations()
+        self.parseMap.getStudentLocations(self.appDelegate.countUp)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.reloadMapView()
     }
     
     @IBAction func findMe(sender: UIButton) {
@@ -45,7 +51,6 @@ class mapView:UIViewController, MKMapViewDelegate, loadPositionDelegate, UIAlert
             
             // The lat and long are used to create a CLLocationCoordinates2D instance.
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            
             
             let first = myData.objectAtIndex(0).valueForKey("firstName") as! NSString
             let last = myData.objectAtIndex(0).valueForKey("lastName") as! NSString
@@ -102,23 +107,26 @@ class mapView:UIViewController, MKMapViewDelegate, loadPositionDelegate, UIAlert
     }
     
     @IBAction func reloadMap(sender: UIBarButtonItem) {
-        //Reload Pin again
-        self.reloadMapView()
+        //load another 10 Pin until 100 pin
+        if(self.appDelegate.countUp < 90){
+            println("load pin \(self.appDelegate.countUp)")
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.appDelegate.countUp += 10
+            self.parseMap.getStudentLocations(self.appDelegate.countUp)
+        }
     }
+    
 //Mark : Delegate for Load position
     func didFinishedLoadMap(students:[StudentInformation])
     {
-        appDelegate.studentList = students
+        self.appDelegate.studentList += students
         self.reloadMapView()
     }
     
     func reloadMapView()
     {
-        //remove all exist first
-        self.mapView.removeAnnotations(self.mapView.annotations)
-
-        
-        for student in appDelegate.studentList {
+        //re-add all pin again
+        for student in self.appDelegate.studentList {
             
             // Notice that the float values are being used to create CLLocationDegree values.
             // This is a version of the Double type.
