@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4FA40377-80B8-44C9-BE44-36BC20B3DD4D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>onthemap</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5C3E5E2EBAC5ACD8B589D966D7570CA99CCC7659</key>
+		<string>https://github.com/Einherz/onTheMap.git</string>
+		<key>9077E087E70C915352E97F58D2CD63B8A9596EB4</key>
+		<string>https://github.com/Einherz/onthemap.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>onthemap.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5C3E5E2EBAC5ACD8B589D966D7570CA99CCC7659</key>
+		<string>../..onthemap/</string>
+		<key>9077E087E70C915352E97F58D2CD63B8A9596EB4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Einherz/onthemap.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9077E087E70C915352E97F58D2CD63B8A9596EB4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9077E087E70C915352E97F58D2CD63B8A9596EB4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>onthemap</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5C3E5E2EBAC5ACD8B589D966D7570CA99CCC7659</string>
+			<key>IDESourceControlWCCName</key>
+			<string>onthemap</string>
+		</dict>
+	</array>
+</dict>
+</plist>
