@@ -25,7 +25,7 @@
                                 </accessibility>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to TheAmorn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn8-ET-Lew">
-                                <rect key="frame" x="226" y="240" width="147" height="20.5"/>
+                                <rect key="frame" x="226" y="240" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -223,6 +223,7 @@
                     <tabBarItem key="tabBarItem" systemItem="recents" id="kxe-VE-T5d"/>
                     <connections>
                         <outlet property="mapList" destination="hyI-BE-iny" id="KTs-aD-KHW"/>
+                        <segue destination="Uv1-oc-FJ1" kind="showDetail" identifier="toLocation" id="wF8-cx-W1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzW-xd-atY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,7 +291,7 @@
         <!--Map View-->
         <scene sceneID="Dre-GB-Wcv">
             <objects>
-                <viewController id="x3L-rO-u9R" customClass="mapView" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapController" id="x3L-rO-u9R" customClass="mapView" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Uq-nB-aAD"/>
                         <viewControllerLayoutGuide type="bottom" id="PpZ-DP-zjk"/>
@@ -501,7 +502,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwm-uL-9Qh">
-                                <rect key="frame" x="260" y="526" width="80" height="34"/>
+                                <rect key="frame" x="260" y="606" width="80" height="34"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="ljC-Ht-EpN"/>
@@ -517,8 +518,8 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-rt-A00">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a Link to Share Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6st-k9-X97">
-                                        <rect key="frame" x="182" y="60" width="234.5" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a Link to Share Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6st-k9-X97">
+                                        <rect key="frame" x="184" y="60" width="235" height="24"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -566,8 +567,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Ka-8a-cqg" firstAttribute="leading" secondItem="y21-Rx-XCy" secondAttribute="leadingMargin" constant="-16" id="4eL-gA-43Z"/>
-                            <constraint firstItem="tvR-FR-H3o" firstAttribute="top" secondItem="bwm-uL-9Qh" secondAttribute="bottom" constant="40" id="6Pw-o1-JOm"/>
-                            <constraint firstItem="8Ka-8a-cqg" firstAttribute="top" secondItem="Moe-rt-A00" secondAttribute="bottom" id="CBi-o8-Y0Z"/>
+                            <constraint firstItem="tvR-FR-H3o" firstAttribute="top" secondItem="bwm-uL-9Qh" secondAttribute="bottom" constant="-40" id="6Pw-o1-JOm"/>
                             <constraint firstItem="Moe-rt-A00" firstAttribute="top" secondItem="8lw-s2-bzx" secondAttribute="bottom" constant="-20" id="Eci-9n-NaP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Ka-8a-cqg" secondAttribute="trailing" constant="-16" id="Mxj-oY-qzs"/>
                             <constraint firstItem="Moe-rt-A00" firstAttribute="leading" secondItem="y21-Rx-XCy" secondAttribute="leadingMargin" constant="-16" id="dOH-Q8-Fb5"/>
@@ -576,14 +576,10 @@
                             <constraint firstItem="tvR-FR-H3o" firstAttribute="top" secondItem="8Ka-8a-cqg" secondAttribute="bottom" id="lLV-w4-hEn"/>
                             <constraint firstItem="8Ka-8a-cqg" firstAttribute="top" secondItem="8lw-s2-bzx" secondAttribute="bottom" constant="-20" id="nip-fx-OLq"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="CBi-o8-Y0Z"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="8Ka-8a-cqg" id="qwW-p1-G7T"/>
+                        <outlet property="heightLayout" destination="6Pw-o1-JOm" id="wXh-cF-Gn5"/>
+                        <outlet property="mapDisplay" destination="8Ka-8a-cqg" id="g70-pE-DEu"/>
                         <outlet property="shareLocation" destination="6st-k9-X97" id="gBf-wH-Mfm"/>
                         <outlet property="submitBtn" destination="bwm-uL-9Qh" id="9Kk-pr-GFv"/>
                         <outlet property="topUrlView" destination="Moe-rt-A00" id="tTA-S1-J63"/>
@@ -593,10 +589,10 @@
             </objects>
             <point key="canvasLocation" x="3411" y="126"/>
         </scene>
-        <!--Main View-->
+        <!--Tab Bar Controller-->
         <scene sceneID="RgY-jn-6QH">
             <objects>
-                <tabBarController storyboardIdentifier="loggedView" id="Zf9-Dc-n8g" customClass="mainView" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="loggedView" id="Zf9-Dc-n8g" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="eiA-0j-vuX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -620,4 +616,7 @@
         <image name="me.png" width="80" height="80"/>
         <image name="refresh.png" width="20" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jmI-8U-wxY"/>
+    </inferredMetricsTieBreakers>
 </document>

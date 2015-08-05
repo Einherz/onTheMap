@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5C3E5E2EBAC5ACD8B589D966D7570CA99CCC7659</key>
-		<string>../..onthemap/</string>
+		<string>../..onthemap</string>
 		<key>9077E087E70C915352E97F58D2CD63B8A9596EB4</key>
 		<string>../..</string>
 	</dict>
@@ -46,7 +46,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5C3E5E2EBAC5ACD8B589D966D7570CA99CCC7659</string>
 			<key>IDESourceControlWCCName</key>
-			<string>onthemap</string>
+			<string>onthemaponthemap</string>
 		</dict>
 	</array>
 </dict>

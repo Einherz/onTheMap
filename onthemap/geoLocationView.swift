@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognizerDelegate
+class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognizerDelegate,UITextFieldDelegate
 {
     var positionMap:NSString!
     let login:udacityAPI = udacityAPI()
@@ -18,21 +18,21 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
     let geoCode:CLGeocoder = CLGeocoder()
     var coordinate:CLLocationCoordinate2D?
     var flagSubmit:Bool = false
-     var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0, 50, 50)) as UIActivityIndicatorView
+    var actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0, 50, 50)) as UIActivityIndicatorView
     
     var delegate:loadPositionDelegate?
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapDisplay: MKMapView!
     @IBOutlet weak var shareLocation: UITextField!
     @IBOutlet weak var topUrlView: UIView!
     @IBOutlet weak var submitBtn: UIButton!
     
-    
+    @IBOutlet weak var heightLayout: NSLayoutConstraint!
     override func viewDidLoad() {
         
-        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard:")
-        tapGesture.delegate = self
-        self.view.addGestureRecognizer(tapGesture);
+//        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard:")
+//        tapGesture.delegate = self
+//        self.view.addGestureRecognizer(tapGesture);
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
@@ -41,6 +41,10 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
         self.actInd.startAnimating()
 
         self.parseMap.delegate = self
+        self.shareLocation.delegate = self
+        
+        self.submitBtn.alpha = 0.5
+        self.submitBtn.enabled = false
         
         geoCode.geocodeAddressString(self.positionMap as String, completionHandler: { (places, error) -> Void in
             if((error) != nil)
@@ -53,8 +57,7 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
                 
                 self.actInd.stopAnimating()
                 self.topUrlView.hidden = false
-                self.submitBtn.alpha = 0.5
-                self.submitBtn.enabled = false
+               
                 self.shareLocation.enabled = false
             }
             
@@ -66,6 +69,7 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
                     }, completion: { finished in
                         self.actInd.stopAnimating()
                 })
+                
 
                 self.flagSubmit = true
                 
@@ -77,9 +81,9 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
                 point.coordinate = mapCoordinate
                 point.title = self.positionMap as String
                 
-                self.mapView.addAnnotation(point)
-                self.mapView.centerCoordinate = mapCoordinate
-                self.mapView.selectAnnotation(point, animated: true)
+                self.mapDisplay.addAnnotation(point)
+                self.mapDisplay.centerCoordinate = mapCoordinate
+                self.mapDisplay.selectAnnotation(point, animated: true)
             }
         })
     }
@@ -160,7 +164,7 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
         alert.show()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("loggedView") as! mainView
+        var viewController = storyboard.instantiateViewControllerWithIdentifier("mapController") as! mapView
         self.presentViewController(viewController, animated: true, completion: nil)
     }
     
@@ -169,16 +173,44 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
     }
 
     //Mark keyboard hiding
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        // force keyboard to hide
+//    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+//        // force keyboard to hide
+//        self.view.endEditing(true)
+//        return false
+//    }
+//    
+//    func hideKeyBoard()
+//    {
+//        // force keyboard to hide
+//        self.view.endEditing(true);
+//    }
+    
+    
+    //add return function to hidekeyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        return false
+        return true
     }
     
-    func hideKeyBoard()
-    {
-        // force keyboard to hide
-        self.view.endEditing(true);
+    func textFieldDidEndEditing(textField: UITextField) {
+       
+        let validateURL = NSURL(string: textField.text)
+        
+        if (validateURL?.host != nil) && (validateURL != nil){
+            UIView.animateWithDuration(0.7, delay: 1.0, usingSpringWithDamping: 1.0,initialSpringVelocity: 10.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+    
+                self.submitBtn.alpha = 1.0
+                self.submitBtn.backgroundColor = UIColor.greenColor()
+                self.submitBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+                self.submitBtn.setNeedsUpdateConstraints()
+                
+                self.heightLayout.constant = 40
+                
+                }, completion: { finished in
+                   self.submitBtn.layoutIfNeeded()
+                   self.submitBtn.enabled = true
+            })
+    }
     }
 }
 
