@@ -30,15 +30,12 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
     @IBOutlet weak var heightLayout: NSLayoutConstraint!
     override func viewDidLoad() {
         
-//        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard:")
-//        tapGesture.delegate = self
-//        self.view.addGestureRecognizer(tapGesture);
-        
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         self.view.addSubview(actInd)
         self.actInd.startAnimating()
+        self.mapDisplay.alpha = 0
 
         self.parseMap.delegate = self
         self.shareLocation.delegate = self
@@ -55,22 +52,19 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
                 alert.addButtonWithTitle("OK")
                 alert.show()
                 
-                self.actInd.stopAnimating()
+                UIView.animateWithDuration(3, delay: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                    self.actInd.color = UIColor.redColor()
+
+                    }, completion: { finished in
+                        self.actInd.stopAnimating()
+                })
+                
                 self.topUrlView.hidden = false
-               
                 self.shareLocation.enabled = false
             }
             
             else if let place = places[0] as? CLPlacemark{
                 
-                UIView.animateWithDuration(0.7, delay: 1.0, usingSpringWithDamping: 0.7,initialSpringVelocity: 7.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    self.topUrlView.hidden = false
-                    self.topUrlView.frame = CGRectMake(0, 200, self.topUrlView.frame.width, self.topUrlView.frame.height)
-                    }, completion: { finished in
-                        self.actInd.stopAnimating()
-                })
-                
-
                 self.flagSubmit = true
                 
                 let place:CLPlacemark = places[0] as! CLPlacemark
@@ -82,8 +76,26 @@ class geoLocationView:UIViewController, loadPositionDelegate, UIGestureRecognize
                 point.title = self.positionMap as String
                 
                 self.mapDisplay.addAnnotation(point)
-                self.mapDisplay.centerCoordinate = mapCoordinate
                 self.mapDisplay.selectAnnotation(point, animated: true)
+                
+                UIView.animateWithDuration(0.7, delay: 1.0, usingSpringWithDamping: 0.7,initialSpringVelocity: 7.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                    self.topUrlView.hidden = false
+                    self.topUrlView.frame = CGRectMake(0, 200, self.topUrlView.frame.width, self.topUrlView.frame.height)
+                    }, completion: { finished in
+                        UIView.animateWithDuration(2, delay: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                            self.actInd.color = UIColor.greenColor()
+                            }, completion: { finished in
+                                UIView.animateWithDuration(2, delay: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                                   self.mapDisplay.alpha = 1
+                                    }, completion: { finished in
+                                        self.actInd.stopAnimating()
+                                        let viewRegion = MKCoordinateRegionMakeWithDistance(mapCoordinate, 500, 500)
+                                        let adjustRegion = self.mapDisplay.regionThatFits(viewRegion)
+                                        self.mapDisplay.setRegion(adjustRegion, animated: true)
+                                       // self.mapDisplay.setCenterCoordinate(mapCoordinate, animated: true)
+                                })
+                        })
+                })
             }
         })
     }
